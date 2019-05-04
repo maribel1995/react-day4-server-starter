@@ -9,14 +9,14 @@ const Task = require('../models/task-model'); // <== !!!
 
 // POST route => to create a new project
 router.post('/projects', (req, res, next)=>{
- 
   Project.create({
     title: req.body.title,
     description: req.body.description,
     tasks: [],
-    owner: req.user._id 
+    owner: req.user._id,
+    imageUrl: req.body.imageUrl
   })
-    .then(response => {
+  .then(response => {
       res.json(response);
     })
     .catch(err => {

@@ -4,6 +4,7 @@ const Schema   = mongoose.Schema;
 const projectSchema = new Schema({
   title: String,
   description: String,
+  imageUrl: { type: String, required: true },
   tasks: [{type: Schema.Types.ObjectId, ref: 'Task'}],
   owner: {type: Schema.Types.ObjectId, ref: 'User'}
 });
